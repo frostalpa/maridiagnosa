@@ -1,0 +1,122 @@
+section {
+  padding: 70px 0;
+}
+/* Navbar */
+nav.navbar {
+  background-color: #ffffff;
+}
+.navbar-brand {
+  margin-left: 50px;
+}
+.navbar-nav {
+  margin-right: 25px;
+  color: black;
+  font: bold;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler:focus-visible {
+  outline: none;
+}
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  height: 28px;
+  justify-content: space-between;
+  border: none;
+  padding: 0.25rem 0;
+}
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  background-color: #229bd8;
+  transition: 0.7s;
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(1) {
+  transform: rotateZ(47deg) translate(-2px, 14px);
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(2) {
+  transform: translateX(200px);
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(3) {
+  transform: rotateZ(-47deg) translate(-3px, -15px);
+}
+
+/* Hero */
+.hero {
+  padding: 70px 0;
+}
+.hero-title {
+  font-size: 50px;
+  color: #229bd8;
+  font-weight: bold;
+}
+.btn-primary-custom {
+  background-color: #f6f6f6;
+  border-color: black;
+  padding: 10px 60px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.btn-primary-custom:hover {
+  background-color: #4e944f;
+  color: #ffffff;
+  box-shadow: 0 15px 25px -10px rgba(255, 215, 35, 0.8);
+}
+.btn-primary-custom svg {
+  transition: 0.3s;
+}
+.btn-primary-custom:hover svg {
+  fill: #ffffff !important;
+}
+.btn-primary-a {
+  background-color: #f6f6f6;
+  border-color: black;
+  padding: 5px 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.btn-primary-a:hover {
+  background-color: #4e944f;
+  color: #ffffff;
+  box-shadow: 0 15px 25px -10px rgba(255, 215, 35, 0.8);
+}
+.btn-primary-a svg {
+  transition: 0.3s;
+}
+.btn-primary-a:hover svg {
+  fill: #ffffff !important;
+}
+a .btn-primary-admin:hover {
+  color: white;
+}
+.btn-primary-admin {
+  background-color: #f6f6f6;
+  width: 220px;
+  border-color: black;
+  padding: 5px 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.btn-primary-admin:hover {
+  background-color: #4e944f;
+}
+.btn-primary-admin svg {
+  transition: 0.3s;
+}
+.btn-primary-admin:hover svg {
+  fill: #ffffff !important;
+}
+
+div.kartu {
+  margin-left: auto;
+  margin-right: auto;
+}
+button.btn-add {
+  margin-left: auto;
+  margin-right: auto;
+}

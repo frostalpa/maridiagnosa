@@ -1,0 +1,238 @@
+#app,
+body {
+  overflow-x: hidden;
+}
+
+section.blue {
+  background-color: #f6f6f6;
+  color: #ffffff;
+  padding-bottom: 40px;
+}
+
+section.overlay,
+footer.overlay {
+  margin-top: -30px;
+  background-color: #ffffff;
+}
+
+section .title {
+  font-size: 34px;
+  margin-bottom: 24px;
+  color: #4e944f;
+}
+
+/* About / apa itu peduli lindungi */
+.phone-mockup {
+  transform: translate(-25px, 40px);
+  z-index: -2;
+}
+.txt1 {
+  color: #65677f;
+}
+.about-paragraf {
+  padding-bottom: 30px;
+}
+
+/* Fitur */
+section.feature {
+  position: relative;
+}
+div.card {
+  background-color: #f6f6f6;
+  border-radius: 20px;
+}
+.card {
+  border-radius: 40px;
+  border: none;
+  margin-left: auto;
+  padding-top: 100px;
+  color: #65677f;
+  height: 100%;
+}
+
+.card-body {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* video */
+.embed-video {
+  width: 100%;
+  position: relative;
+  padding-top: calc(9 / 16 * 100%);
+  margin-bottom: 70px;
+}
+
+.embed-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+}
+
+/* FAQ */
+.accordion-item {
+  position: relative;
+  border-radius: 30px !important;
+  background-color: #ffffff;
+  margin: 20px 0;
+  z-index: 2;
+}
+.accordion-button {
+  border-radius: 80px !important;
+  z-index: unset;
+  position: relative;
+}
+.accordion-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1 !important;
+  margin: -4px;
+  border-radius: 35px !important;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.accordion-button:not(.collapsed) {
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.accordion-button:hover {
+  z-index: unset;
+}
+.accordion-button:focus {
+  z-index: unset;
+}
+
+.accordion-button::after {
+  display: none;
+}
+.accordion-collapse {
+  z-index: -2 !important;
+  background-color: transparent !important;
+}
+.collapse-btn {
+  margin-left: auto;
+  height: 32px;
+  width: 32px;
+  background-image: linear-gradient(20deg, #a1c4fd 0%, #c2e9fb 100%);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#vertical-line,
+#horizontal-line {
+  width: 2px;
+  height: 15px;
+  background-color: #ffffff;
+}
+#horizontal-line {
+  transform: translateX(-2px) rotateZ(90deg);
+  transition: 1s;
+  transform-origin: center center;
+}
+#vertical-line {
+  transition: 0.5s;
+}
+.accordion-button:not(.collapsed) .collapse-btn #vertical-line {
+  transform: translateX(2px) rotateZ(90deg);
+}
+
+/* download */
+
+.download {
+  padding: 0;
+}
+
+.download-text {
+  padding: 120px 0;
+}
+
+.app-scroll {
+  overflow: hidden;
+  position: relative;
+}
+.img-scroll-hr {
+  height: 450px;
+  transform: translateX(-100px);
+  padding-bottom: 50px;
+}
+.img-scroll-1,
+.img-scroll-2 {
+  position: absolute;
+  width: 50%;
+  padding: 0 20px;
+  top: 0;
+}
+
+.img-scroll-2 {
+  left: 50%;
+  top: -100%;
+}
+
+/* Footer */
+footer {
+  padding: 70px 0;
+}
+
+.logo-instansi {
+  width: 100%;
+}
+
+.logo-instansi img {
+  height: 22px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 60px;
+  }
+  .img-scroll-hr {
+    height: 550px;
+  }
+  .logo-instansi img {
+    height: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  section.overlay,
+  footer.overlay {
+    margin-top: -40px;
+  }
+
+  section .title {
+    font-size: 54px;
+  }
+
+  .phone-mockup {
+    transform: translate(0, 0);
+  }
+
+  .card {
+    width: calc(100% - 50px);
+  }
+
+  .card-icon {
+    left: -50px;
+  }
+
+  .logo-instansi img {
+    height: 35px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .download-text {
+    padding: 200px 0;
+  }
+}
