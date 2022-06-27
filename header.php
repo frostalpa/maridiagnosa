@@ -3,41 +3,72 @@
     <style>
       <?php include'css/bootstrap.min.css';?>
       <?php include'css/navbar.css'; ?>
-      
     </style>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg  navbar-light">
-      <div class="container">
-        <a class="navbar-brand ms-5" href="index.php">
-          <img src="images/nav-logo.png" alt="" />
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow bg-success">
+      <div class="container-fluid ml-auto mr-auto">
+        <a class="navbar-brand mx-5" href="index.php">
+          <!-- <img src="images/nav-logo.png" alt="" /> -->
+          <h5 class="ml-5">MariDiagnosa</h5>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto me-5">
-            <a class="nav-link mx-2" aria-current="page" href=<?= '"index.php"';?>>Beranda</a>
-            <a class="nav-link mx-2" href="#about">Tentang Kami</a>
-            <a class="nav-link mx-2" href="#feature">Fitur</a>
-            <a class="nav-link mx-2" href="#works">Cara Kerja</a>
-            <a class="nav-link mx-2 me-lg-5" href="#faq">FAQ</a>
-            <a class="btn btn-primary-a text-capitalized py-2 px-4" href="login.php"><?php 
-            if( isset($_SESSION["login"]) ) {
-              $login =  $_SESSION["username"];
-            }
-            else{
-              $login = "login";
-            }
-            echo $login          
-            ?></a>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto ">
+              <li class="nav-item">
+                <a class="nav-link mx-2 " aria-current="page" href=<?= '"index.php"';?>>Beranda</a>          
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#about">Tentang Kami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#feature">Fitur</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#works">Cara Kerja</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link mx-2" href="#faq">FAQ</a>
+              </li>
+            <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown arrow">
+                <?php if( isset($_SESSION["login"]) ) {?>
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="mx-2 d-none d-lg-inline text-capitalized"><?php 
+                      if( isset($_SESSION["login"]) ) {
+                          $login =  $_SESSION["username"];
+                        }
+                      echo $login
+                      ?></span>
+                  </a>
+                  <!-- Dropdown - User Information -->
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                      aria-labelledby="userDropdown">
+                      <a class="dropdown-item" href="m-datadiri.php">
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Profile
+                      </a>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Logout
+                      </a>
+                  </div>
+                  <?php
+                  }else{?>
+                    <a class="nav-link mx-2 me-lg-5" href="login.php">Login</a>
+                  <?php
+                  }
+                  ?>
+              </li>
+          </ul>
         </div>
       </div>
     </nav>
-  <!-- end Navbar -->
-
+  <!-- End of Topbar -->
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">

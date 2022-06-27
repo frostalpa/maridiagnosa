@@ -4,9 +4,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+        <i class="fa-solid fa-seedling"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin<sup>2</sup></div>
+        <div class="sidebar-brand-text mt-3 mr-3 mb-3 ml-1">MariDiagnosa</div>
     </a>
 
     <!-- Divider -->
@@ -28,7 +28,7 @@
     </div>
     <li class="nav-item ">
         <a class="nav-link" href="m-datadiri.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-user"></i>
             <span>Data Diri</span></a>
     </li>
 
@@ -48,6 +48,19 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        User Management
+    </div>
+    <li class="nav-item ">
+        <a class="nav-link" href="m-user.php">
+            <i class="fa-solid fa-users"></i>
+            <span>User Setting</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    
     <div class="sidebar-heading">
         Data tanaman
     </div>
@@ -64,6 +77,11 @@
         <i class="fa-solid fa-bars"></i>
             <span>Data Gejala</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="m-relasi.php">
+        <i class="fa-solid fa-bars"></i>
+            <span>Data Relasi</span></a>
+    </li>
 
 
 
@@ -76,5 +94,8 @@
     </div>
 
 </ul>
+<?php 
+if(!$_SESSION['login'] && in_array($mod, array()))
+?>
 <!-- End of Sidebar -->
 <script src="https://kit.fontawesome.com/0141835e9d.js" crossorigin="anonymous"></script>

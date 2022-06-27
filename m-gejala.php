@@ -10,26 +10,7 @@ if( !isset($_SESSION["login"]) ) {
 
 $datapenyakit = query("SELECT * FROM tb_gejala");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
-    <title>MariDiagnosa</title>
-    <style>
-        <?php include 'css/navbar.css';?>
-    </style>
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-</head>
+<?php include 'm-head.php';?>
 
 
 <body id="page-top">
@@ -85,16 +66,16 @@ $datapenyakit = query("SELECT * FROM tb_gejala");
                                     </div>
 
                                     <div class="container-fluid mx-auto row">
-                                        <div class="d-flex justify-content-start mt-2 col">
+                                        <div class="d-flex justify-content-start mt-2 mb-2 col">
                                             <a class="btn btn-primary btn-xs" href="m-gejalaadd.php">Tambah Data</a>
                                         </div>
-                                        <div class="d-flex justify-content-end mt-2 col">
+                                        <div class="d-flex justify-content-end mt-2 mb-2 col">
                                             <input type="text" name="cari" placeholder="cari gejala">
                                             <a class="btn btn-primary btn-xs ml-1" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                                         </div>
                                         </ul>
                                         <!-- Card Body -->
-                                        <table class="table table-striped table-sm mt-2">
+                                        <table class="table table-striped table-bordered table-sm mt-2">
                                             <thead class="thead-dark">
                                                 <tr>
                                                 <th class="fs-6" scope="col">No</th>
@@ -110,7 +91,7 @@ $datapenyakit = query("SELECT * FROM tb_gejala");
                                                 <div class="d-flex align-items-center">
                                                     <tr>
                                                     <th scope="row"><?= $i; ?></th>
-                                                    <td class="fs-6">G<?= $row["kode_gejala"]; ?></td>
+                                                    <td class="fs-6"><?= $row["kode_gejala"]; ?></td>
                                                     <td class="fs-6" ><?= $row["nama_gejala"]; ?></td>
                                                     <td class="fs-6" ><?= $row["keterangan"]; ?></td>
                                                     <td>

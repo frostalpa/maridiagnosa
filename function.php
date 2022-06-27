@@ -4,13 +4,31 @@ $Database = 'maridiagnosa';
 $username = 'root';
 $password = '';
 
-include 'model.php';
 $conn = mysqli_connect($server, $username, $password, $Database); 
-$conn = $db;
+include 'fungsiDSA.php';
 if (!$conn) {
     die("<script>alert('Gagal tersambung dengan database.')</script>");
 }
 
+// function get_results($sql){
+// 	$query = $this->query($sql);
+// 	$arr = array();
+// 	while($row = mysqli_fetch_object($query)){
+// 		$arr[] = $row;
+// 	}
+// 	return $arr;
+// }
+// $rows = $conn->get_results("SELECT kode_gejala, nama_gejala FROM tb_gejala ORDER BY kode_gejala");
+// $GEJALA = array();
+// foreach($rows as $row){
+//     $GEJALA[$row->kode_gejala] = $row->nama_gejala;
+// }
+
+// $rows = $conn->get_results("SELECT kode_gejala, nama_gejala FROM tb_gejala ORDER BY kode_gejala");
+// $GEJALA = array();
+// foreach($rows as $row){
+//     $GEJALA[$row->kode_gejala] = $row->nama_gejala;
+// }
 
 function query($query) {
 	global $conn;
@@ -39,6 +57,22 @@ function tambah($data) {
 
 	return mysqli_affected_rows($conn);
 }
+function tambahrelasi($data) {
+	global $conn;
+	$id = $data["id_relasi"];
+	$idg = $data["kode_gejala"];
+	$idp = $data["kode_penyakit"];
+
+	$query = 
+			"INSERT INTO tbl_relasi
+			VALUES
+			('$id', '$idp', '$idg')
+			";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);
+}
+
 
 function tambahgejala($data) {
 	global $conn;
@@ -55,8 +89,6 @@ function tambahgejala($data) {
 
 	return mysqli_affected_rows($conn);
 }
-
-
 
 function upload() {
 
@@ -102,9 +134,6 @@ function upload() {
 
 	return $namaFileBaru;
 }
-
-
-
 //Fucntion Hapus
 function hapus($id) {
 	global $conn;
@@ -142,7 +171,6 @@ function ubah($data) {
 	// 	$gambar = upload();
 	// }
 	
-
 	$query = "UPDATE akun SET
 				nama = '$nama',
 				username = '$username',
@@ -161,6 +189,28 @@ function ubah($data) {
 
 	mysqli_query($conn, $query);
 
+	return mysqli_affected_rows($conn);	
+}
+
+function ubahlvl($data) {
+	global $conn;
+	$id = $data["id_user"];
+	$nama = htmlspecialchars($data["nama"]);
+	$email = htmlspecialchars($data["email"]);
+	$username = htmlspecialchars($data["username"]);
+	$level = htmlspecialchars($data["level"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	
+	$query = "UPDATE akun SET
+				nama = '$nama',
+				email = '$email',
+				username = '$username',
+				level = '$level',
+				alamat = '$alamat'
+			WHERE id = $id
+			";
+
+	mysqli_query($conn, $query);
 	return mysqli_affected_rows($conn);	
 }
 
@@ -201,12 +251,12 @@ function ubahgejala($data) {
 }
 
 function cari($keyword) {
-	$query = "SELECT * FROM mahasiswa
+	$query = "SELECT * FROM tbl_relasi INNER JOIN tb_gejala INNER JOIN tbl_penyakit
 			WHERE
-			nama LIKE '%$keyword%' OR
-			nrp LIKE '%$keyword%' OR
-			email LIKE '%$keyword%' OR
-			jurusan LIKE '%$keyword%'
+			id_penyakit LIKE '%$keyword%' OR
+			nama_penyakit LIKE '%$keyword%' OR
+			kode_gejala LIKE '%$keyword%' OR
+			nama_gejala LIKE '%$keyword%'
 			";
 	return query($query);
 }
@@ -216,7 +266,6 @@ function registrasi($data) {
 	global $conn;
 	$level = "user";
 	$nama = htmlspecialchars($data["nama"]);
-	$alamat = htmlspecialchars($data["alamat"]);
 	$email = htmlspecialchars($data["email"]);
 	$password = mysqli_real_escape_string($conn, $data["password"]);
 	$username = strtolower(stripslashes($data["username"]));
@@ -231,7 +280,7 @@ function registrasi($data) {
 	// enkripsi password
 	$password = password_hash($password, PASSWORD_DEFAULT);
 	// tambahkan userbaru ke database
-	mysqli_query($conn, "INSERT INTO akun VALUES('','$nama','$email', '$password', '$username','$alamat','', '$level')");
+	mysqli_query($conn, "INSERT INTO akun VALUES('','$nama','$email', '$password', '$username','','', '$level')");
 	return mysqli_affected_rows($conn);
 }
 ?>

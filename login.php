@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-require 'function.php';
+include 'function.php';
 
 if( isset($_SESSION["login"]) ) {
 	header("Location: m-dashboard.php");
@@ -19,16 +19,17 @@ if( isset($_POST["login"]) ) {
 		// cek password
 		$row = mysqli_fetch_assoc($result);
         $_SESSION['id']     = $row['id'];
-	    	$_SESSION['nama']    = $row['nama'];
-        $_SESSION['email']    = $row['email'];
-        $_SESSION['alamat']    = $row['alamat'];
-        $_SESSION['riwayat']    = $row['riwayat'];
+	    	$_SESSION['nama']   = $row['nama'];
+        $_SESSION['email']  = $row['email'];
+        $_SESSION['alamat'] = $row['alamat'];
+        $_SESSION['riwayat']= $row['riwayat'];
     if( password_verify($password, $row["password"]) ) {
 			//ambil data query
     
       // set session
       $_SESSION["username"] = $username;
 			$_SESSION["login"] = true;
+      $_SESSION["level"]  = $row['level'];
       
       header("Location: m-dashboard.php");
 			exit;
@@ -63,10 +64,10 @@ if( isset($_POST["login"]) ) {
     <section class="h-100">
       <div class="container h-100">
         <div class="row justify-content-md-center h-100">
-          <div class="card-wrapper">
-            <div class="brand">
-              <img src="img/logo.jpg" alt="logo" />
-            </div>
+          <div class="card-wrapper mt-5">
+            <!-- <div class="brand">
+              <img src="img/log.jpg" alt="logo" />
+            </div> -->
             <div class="card fat">
               <div class="card-body">
                 <h4 class="card-title">Login</h4>

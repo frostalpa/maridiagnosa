@@ -32,10 +32,10 @@ if( isset($_POST["daftar"]) ) {
 	<section class="h-100">
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">
-				<div class="card-wrapper">
-					<div class="brand ">
+				<div class="card-wrapper mt-5">
+					<!-- <div class="brand ">
 						<img src="img/logo.jpg" alt="bootstrap 4 login page">
-					</div>
+					</div> -->
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Daftar</h4>

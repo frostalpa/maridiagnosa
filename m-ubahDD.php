@@ -22,8 +22,8 @@ if( isset($_POST["simpan"]) ) {
 	if( ubah($_POST) > 0 ) {
 		echo "
 			<script>
-				alert('data berhasil diubah!');
-				document.location.href = 'dashboard.php';
+				alert('data diri berhasl diubah!');
+				document.location.href = 'm-dashboard.php';
 			</script>
 		";
 	} else {

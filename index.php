@@ -7,13 +7,17 @@ ob_start()
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/icon type">
-    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" href="images/seedling-solid.svg" type="image/icon type">
     
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+
     <!--Css-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
@@ -21,72 +25,73 @@ ob_start()
     <!-- FOnts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> -->
 
-    <title>PeduliLindungi</title>
+    <title>Maridiagnosa</title>
 </head>
 <body>
     <div id="app">
     <?php include 'header.php';?>
       <main>
           <!-- About / apa itu pedulilindungi -->
-          <section class="about blue" id="about">
-              <div class="container">
-                  <div class="row justify-content-between mx-5">
-                      <div class="col-lg-7 order-lg-2 align-self-center about-paragraf">
-                          <h1 class="title green">Apa itu MariDiagnosa?</h1>
-                          <p class="txt1">MariDiagnosa merupakan aplikasi yang mendiagnosa penyakit tanaman janda bolong (Monstera Adansonii).</p>
-                          <p class="txt1">Aplikasi ini akan mendiagnosa penyakit tanaman dengan hasil jawaban user yang dimasukan kemudian akan dilakukan proses perhitungan. Pengguna dapat mengetahui jenis penyakit yang menyerang tanaman serta cara penanganan dari penyakit tersebut.</p>
-                      </div>
-                      <div class="col-lg-5 order-lg-1 pe-lg-5 align-self-end">
-                          <img src="images/apa-itu-pedulilindungi.png" class="w-100 phone-mockup" alt="">
-                      </div>
-                  </div>
-              </div>
-          </section>
+            <section class="about blue" id="about">
+                <div class="container">
+                    <div class="row d-flex justify-content-center mx-5 ">
+                        <div class="col-lg-12 order-lg-12 about-paragraf">
+                            <h1 class="title green">Apa itu MariDiagnosa?</h1>
+                            <p class="txt1">MariDiagnosa merupakan aplikasi yang mendiagnosa penyakit tanaman janda bolong (Monstera Adansonii).</p>
+                            <p class="txt1">Aplikasi ini akan mendiagnosa penyakit tanaman dengan hasil jawaban user yang dimasukan kemudian akan dilakukan proses perhitungan. Pengguna dapat mengetahui jenis penyakit yang menyerang tanaman serta cara penanganan dari penyakit tersebut.</p>
+                        </div>
+                        <!-- <div class="col-lg-5 order-lg-1 pe-lg-5 align-self-end">
+                            <img src="images/apa-itu-pedulilindungi.png" class="w-100 phone-mockup" alt="">
+                        </div> -->
+                    </div>
+                </div>
+            </section>
           <!-- end About -->
 
           <!-- feature -->
           <section class="feature overlay" id="feature">
               <div class="container">
-                  <h1 class="title mb-5 text-center">Fitur MariDiagnosa</h1>
-                  <div class="row mx-5">
+                <h1 class="title mb-5 text-center">Fitur MariDiagnosa</h1>
+                <div class="row mx-5">
                     <div class="col my-5">
-                        <div class="card">
-                            <div class="card-body crd">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/pexels-cottonbro-4065876.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
                                 <div>
                                     <h3>Diagnosa Penyakit</h3>
                                     <p>User dapat mendiagnosa penyakit berdasarkan gejala yang terdapat pada tanaman.</p>
                                 </div>
-                                <a href="#" class="btn btn-primary-custom">Baca Selengkapnya</a>
                             </div>
                         </div>
                     </div>
     
                     <div class="col my-5">
-                        <div class="card">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/pexels-anete-lusina-4792285.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <div>
                                     <h3>Riwayat Diagnosa</h3>
                                     <p>User dapat melihat diagnosa apa saja yang telah didiagnosa sebelumnya sehingga mengetahui jenis penyakit yang menyerang pada tanaman ini.</p>
                                 </div>
-                                <a href="#" class="btn btn-primary-custom">Baca Selengkapnya</a>
                             </div>
                         </div>
                     </div>
     
                     <div class="col my-5">
                         <div class="card">
+                            <img src="img/pexels-cottonbro-4065876.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <div>
                                     <h3>Informasi Penyakit</h3>
                                     <p>Fitur ini memberi informasi kepada user jenis penyakit, cara penanganan penyakit yang kemungkinan menyerang pada tanaman.</p>
                                 </div>
-                                <a href="#" class="btn btn-primary-custom">Baca Selengkapnya</a>
                             </div>
                         </div>
                     </div>
-                  </div>
+                </div>
               </div>
           </section>
           <!-- end feature -->
@@ -95,17 +100,17 @@ ob_start()
           <section class="works" id="works">
               <div class="container">
                   <div class="row mx-5">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <h1 class="title">Cara Kerja MariDiagnosa?</h1>
-                        <img src="images/pedulilindungi-bekerja-mirror.png" class="w-100 d-lg-none my-5" alt="">
+                        <!-- <img src="images/pedulilindungi-bekerja-mirror.png" class="w-100 d-lg-none my-5" alt=""> -->
                         <p>Pada saat Anda mengunduh PeduliLindungi, sistem akan meminta persetujuan Anda untuk mengaktifkan data lokasi. Dengan kondisi lokasi aktif, maka secara berkala aplikasi akan melakukan identifikasi lokasi Anda serta memberikan informasi terkait keramaian dan zonasi penyebaran COVID-19.</p>
                         <p>Hasil tracing ini akan memudahkan pemerintah untuk mengidentifikasi siapa saja yang perlu mendapat penanganan lebih lanjut agar penghentian penyebaran COVID-19 dapat dilakukan. Sehingga, semakin banyak partisipasi masyarakat yang menggunakan aplikasi ini, akan semakin membantu pemerintah dalam melakukan tracing dan tracking.</p>
                         <p>PeduliLindungi sangat memperhatikan kerahasiaan pribadi Anda. Data Anda disimpan aman dalam format terenkripsi dan tidak akan dibagikan kepada orang lain. Data Anda hanya akan diakses bila Anda dalam risiko tertular COVID-19 dan perlu segera dihubungi oleh petugas kesehatan.</p>
                     </div>
 
-                    <div class="col-lg-5 mx-auto">
+                    <!-- <div class="col-lg-5 mx-auto">
                         <img src="images/pedulilindungi-bekerja.png" class="w-100 d-none d-lg-block" alt="">
-                    </div>
+                    </div> -->
 
                   </div>
               </div>
@@ -172,42 +177,6 @@ ob_start()
                                   </div>
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <span>Apakah wajib mengunduh <strong>PeduliLindungi?</strong></span>
-                                    <div class="collapse-btn">
-                                        <div id="vertical-line"></div>
-                                        <div id="horizontal-line"></div>
-                                    </div>
-                                  </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                  <div class="accordion-body">
-                                    <p>Pemerintah mewajibkan masyarakat yang akan beraktivitas di tempat umum untuk memiliki sertifikat vaksin Covid-19. Peraturan ini menjadi upaya pemerintah untuk beradaptasi dengan pandemi. Kebijakan ini diterapkan secara bertahap, dimulai sebagai syarat untuk masuk pusat perbelanjaan atau mal, juga sebagai syarat berpergian dengan moda transportasi umum, dan kendaraan pribadi khusus untuk perjalanan domestik.</p>
-                                    <p>Pemerintah mewajibkan masyarakat yang akan beraktivitas di tempat umum untuk memiliki sertifikat vaksin Covid-19. Peraturan ini menjadi upaya pemerintah untuk beradaptasi dengan pandemi.  Kebijakan ini diterapkan secara bertahap, dimulai sebagai syarat untuk masuk pusat perbelanjaan atau mal, juga sebagai syarat berpergian dengan moda transportasi umum, dan kendaraan pribadi khusus untuk perjalanan domestik.  Dengan menunjukkan sertifikat vaksin Covid-19 minimal dosis pertama, masyarakat dapat beraktivas di tempat umum tanpa dihambat para petugas.   Umumnya, sertifikat vaksin Covid-19 akan didapat beberapa hari setelah peserta melakukan vaksin. </p>
-                                    <p>Sertifikat tersebut akan diperoleh oleh peserta melalui SMS dari 1199 yang berisi tautan sertifikat vaksin Covid-19. Jika tidak mendapat SMS, Nadia mengatakan bahwa peserta bisa mengecek sertifikat vaksinnya secara langsung melalui laman atau aplikasi PeduliLindungi.  Melalui situs atau aplikasi PeduliLindungi peserta juga dapat mendownload atau mengunduh sertifikat vaksinnya. </p>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <span>Bagaimana keamanan data aplikasi <strong>PeduliLindungi?</strong></span>
-                                    <div class="collapse-btn">
-                                        <div id="vertical-line"></div>
-                                        <div id="horizontal-line"></div>
-                                    </div>
-                                  </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                  <div class="accordion-body">
-                                        <p>Sesuai dengan Keputusan Menteri Kominfo No. 171 Tahun 2020, PeduliLindungi menjamin perlindungan data pribadi sesuai undang-undang. Data yang telah tersimpan aman dalam format terenkripsi dan tidak akan dibagikan kepada orang lain. Aspek keamanan Aplikasi PeduliLindungi telah ditinjau oleh <i>Apple Store</i> dan <i>Google Play</i> sebelum diluncurkan ke masyarakat. Sehingga sangat aman dari gangguan seperti <i>Phising</i> atau <i>Malware</i></p>
-                                  </div>
-                                </div>
-                            </div>
                         </div>
                         </div>
                     </div>
@@ -256,5 +225,13 @@ ob_start()
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/main.js"></script>
+      <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="js/jquery.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 </body>
 </html>
